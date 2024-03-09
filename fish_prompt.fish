@@ -1,4 +1,6 @@
-function fish_prompt
+function fish_prompt  
+  set -l last_status $status
+
   # Setup colors
   set -l normal (set_color normal)
   set -l white (set_color FFFFFF)
@@ -22,11 +24,21 @@ function fish_prompt
   set -g __fish_prompt_char 'λ'
 
   ## Line 1
+  set -l user (whoami)
+  set -l root ""
+
+  if test $last_status -ne 0
+    set __fish_prompt_char $hotpink'λ'$normal
+  end
+
+  if test $user = "root"
+    set root "# "
+  end
 
   echo -n $limegreen(prompt_pwd|sed "s=$HOME=~=")$turquoise
   __fish_git_prompt " · %s"
   echo
 
   ## Line 2
-  echo -n $orange$__fish_prompt_char' '$normal
+  echo -n $root$orange$__fish_prompt_char' '$normal
 end
