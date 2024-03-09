@@ -32,7 +32,7 @@ function fish_prompt
   # Prompt status only if it's not 0
   set -l stat
   if test $last_status -ne 0
-      set stat "[$last_status]"(set_color normal)
+      set stat "[$last_status]"
   end
   echo -n $stat$orange$__fish_prompt_char' '$normal
 end
