@@ -31,7 +31,7 @@ function fish_prompt
   ## Line 2
   set -l current_user (whoami)
   set -l warning ""
-  if current_user -eq root
+  if $current_user -eq root
     set -l warning "#"
   echo -n $warning$orange$__fish_prompt_char' '$normal
 end
