@@ -22,14 +22,16 @@ function fish_prompt
   set -g __fish_git_prompt_show_informative_status true
   set -g __fish_prompt_char 'λ'
 
-
-  #set -l current_user (whoami)
-
   ## Line 1
+
   echo -n $limegreen(prompt_pwd|sed "s=$HOME=~=")$turquoise
   __fish_git_prompt " · %s"
   echo
 
   ## Line 2
-  echo -n $orange$__fish_prompt_char' '$normal
+  set -l current_user (whoami)
+  set -l warning ""
+  if current_user -eq root
+    set -l warning "#"
+  echo -n $warning$orange$__fish_prompt_char' '$normal
 end
