@@ -1,6 +1,5 @@
 function fish_prompt
   # Setup colors
-  #set -l hostcolor (set_color (uname -n | md5sum | cut -f1 -d' ' | tr -d '\n' | tail -c6))
   set -l normal (set_color normal)
   set -l white (set_color FFFFFF)
   set -l turquoise (set_color 5fdfff)
@@ -29,9 +28,11 @@ function fish_prompt
   echo
 
   ## Line 2
-  set -l current_user (whoami)
-  set -l warning ("")
-  if $current_user -eq root
-    set -l warning ("#")
-  echo -n $warning$orange$__fish_prompt_char' '$normal
+  set -l last_status $status
+  # Prompt status only if it's not 0
+  set -l stat
+  if test $last_status -ne 0
+      set stat "[$last_status]"(set_color normal)
+  end
+  echo -n $stat$orange$__fish_prompt_char' '$normal
 end
