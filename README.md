@@ -13,19 +13,13 @@
 ## Install
 
 ```fish
-omf install lambda-zero
-```
-or
-
-```fish
-omf install marcin-dudek/lambda-zero
+omf install https://github.com/LBY-L/LambdaOMF
 ```
 
 ## Features
 
 * Awesome λ prompt.
 * Minimalistic theme.
-* Current time.
 
 ## Screenshot
 
@@ -35,13 +29,4 @@ omf install marcin-dudek/lambda-zero
 
 
 # License
-
-[MIT][mit] © [Marcin Dudek][author] et [al][contributors]
-
-
-[mit]:            https://opensource.org/licenses/MIT
-[author]:         https://github.com/marcin-dudek
-[contributors]:   https://github.com/marcin-dudek/lambda-zero/graphs/contributors
-[omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
-
-[license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
+[original author]:         https://github.com/marcin-dudek
