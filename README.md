@@ -20,7 +20,7 @@ omf install https://github.com/LBY-L/LambdaOMF
 ## Screenshot
 
 <p align="center">
-<img src="./screenshot.png" alt="screenshot to be done">
+<img src="./carbonscreenshot.png" alt="screenshot to be done">
 </p>
 
 
